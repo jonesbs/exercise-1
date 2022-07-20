@@ -33,9 +33,10 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
         "LOCATION": "unique-snowflake",
-        "TIMEOUT": 5,
     }
 }
+
+CACHE_MIDDLEWARE_SECONDS = 5
 
 
 # Application definition

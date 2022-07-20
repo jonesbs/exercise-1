@@ -17,7 +17,7 @@ class BookViewset(viewsets.ViewSet):
 
     def list(self, request):
         try:
-            book_list = GutendexClient.search(request.GET)
+            book_list = GutendexClient.search(request.query_params)
             serializer = BookSerializer(book_list["results"], many=True)
             return Response(serializer.data)
         except RequestFail as e:
